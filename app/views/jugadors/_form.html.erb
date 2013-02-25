@@ -6,7 +6,8 @@
     <%= f.input :apellido %>
     <%= f.input :apodo %>
     <%= f.input :numero %>
-    <%= f.input :fecha_nacimiento, :start_year => '1940' %>
+    <%= f.label :fecha_nacimiento, "Fecha de Nacimiento" %>
+    <%= f.date_select :fecha_nacimiento, {:start_year => 1940},{:class => 'span2'} %>
     <%= f.label :equipo_id, "Equipo" %>
     <%= collection_select(:jugador, :equipo_id, Equipo.all, :id, :nombre, :include_blank => true) %>
   </div>
