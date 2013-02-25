@@ -1,0 +1,23 @@
+<h1>Listing equipos</h1>
+
+<table class="table table-condensed table-hover">
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @equipos.each do |equipo| %>
+  <tr>
+    <td><%= equipo.nombre %></td>
+    <td><%= link_to 'Show', equipo %></td>
+    <td><%= link_to 'Edit', edit_equipo_path(equipo) %></td>
+    <td><%= link_to 'Destroy', equipo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Equipo', new_equipo_path %>

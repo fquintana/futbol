@@ -1,0 +1,31 @@
+<h2>Torneos</h2>
+
+<table class="table table-condensed table-hover">
+  <tr>
+    <th>Nombre</th>
+    <th>Torneotipo</th>
+    <th>Cantidad equipos</th>
+    <th>Inscriptos</th>
+    <th>Fecha comienzo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @torneos.each do |torneo| %>
+  <tr>
+    <td><%= torneo.nombre %></td>
+    <td><%= torneo.torneotipo.nombre %></td>
+    <td><%= torneo.cantidad_equipos %></td>
+    <td><%= torneo.equipos.size %></td>
+    <td><%= torneo.fecha_comienzo %></td>
+    <td><%= link_to 'Show', torneo %></td>
+    <td><%= link_to 'Edit', edit_torneo_path(torneo) %></td>
+    <td><%= link_to 'Destroy', torneo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Torneo', new_torneo_path %>

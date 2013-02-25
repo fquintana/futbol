@@ -1,0 +1,17 @@
+<%= simple_form_for(@jugador) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre %>
+    <%= f.input :apellido %>
+    <%= f.input :apodo %>
+    <%= f.input :numero %>
+    <%= f.input :fecha_nacimiento, :start_year => '1940' %>
+    <%= f.label :equipo_id, "Equipo" %>
+    <%= collection_select(:jugador, :equipo_id, Equipo.all, :id, :nombre, :include_blank => true) %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

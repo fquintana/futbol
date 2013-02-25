@@ -1,0 +1,38 @@
+<p>
+  <b>Nombre:</b>
+  <%= @equipo.nombre %>
+</p>
+
+<h3>Jugadores</h3>
+<table class="table table-condensed table-hover">
+<tr>
+	<th>Dorsal</th>
+	<th>Nombre</th>
+	<th>Apodo</th>
+	<th>Apellido</th>
+</tr>
+<% @equipo.jugadors.each do |jugador| %>
+<tr>
+	<td><%= jugador.numero %></td>
+	<td><%= jugador.nombre %></td>
+	<td><%= jugador.apodo %></td>
+	<td><%= jugador.apellido %></td>
+</tr>
+<% end %>
+</table>
+
+<h3>Inscripciones</h3>
+<table class="table table-condensed table-hover">
+<tr>
+	<th>Nombre</th>
+</tr>
+<% @equipo.torneos.each do |torneo| %>
+<tr>
+	<td><%= link_to torneo.nombre, torneo %></td>
+</tr>
+<% end %>
+</table>
+
+
+<%= link_to 'Edit', edit_equipo_path(@equipo) %> |
+<%= link_to 'Back', equipos_path %>

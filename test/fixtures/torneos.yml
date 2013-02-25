@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  torneotipo: 1
+  cantidad_equipos: 1
+  fecha_comienzo: 2013-02-23
+
+two:
+  nombre: MyString
+  torneotipo: 1
+  cantidad_equipos: 1
+  fecha_comienzo: 2013-02-23

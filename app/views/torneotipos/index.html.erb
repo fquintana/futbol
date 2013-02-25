@@ -1,0 +1,23 @@
+<h1>Listing torneotipos</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @torneotipos.each do |torneotipo| %>
+  <tr>
+    <td><%= torneotipo.nombre %></td>
+    <td><%= link_to 'Show', torneotipo %></td>
+    <td><%= link_to 'Edit', edit_torneotipo_path(torneotipo) %></td>
+    <td><%= link_to 'Destroy', torneotipo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Torneotipo', new_torneotipo_path %>

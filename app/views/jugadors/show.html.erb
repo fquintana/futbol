@@ -1,0 +1,32 @@
+<p>
+  <b>Nombre:</b>
+  <%= @jugador.nombre %>
+</p>
+
+<p>
+  <b>Apellido:</b>
+  <%= @jugador.apellido %>
+</p>
+
+<p>
+  <b>Apodo:</b>
+  <%= @jugador.apodo %>
+</p>
+
+<p>
+  <b>Numero:</b>
+  <%= @jugador.numero %>
+</p>
+
+<p>
+  <b>Fecha nacimiento:</b>
+  <%= @jugador.fecha_nacimiento %>
+</p>
+
+<p>
+  <b>Equipo:</b>
+  <%= link_to @jugador.equipo.nombre, @jugador.equipo if @jugador.equipo %>
+</p>
+
+<%= link_to 'Edit', edit_jugador_path(@jugador) %> |
+<%= link_to 'Back', jugadors_path %>

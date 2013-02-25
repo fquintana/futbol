@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @torneo.nombre %>
+</p>
+
+<p>
+  <b>Torneotipo:</b>
+  <%= @torneo.torneotipo.nombre %>
+</p>
+
+<p>
+  <b>Cantidad equipos:</b>
+  <%= @torneo.cantidad_equipos %>
+</p>
+
+<p>
+  <b>Fecha comienzo:</b>
+  <%= @torneo.fecha_comienzo %>
+</p>
+
+<h3>Inscripciones</h3>
+<table class="table table-condensed table-hover">
+<tr>
+	<th>Nombre</th>
+</tr>
+<% @torneo.equipos.each do |equipo| %>
+<tr>
+	<td><%= link_to equipo.nombre, equipo %></td>
+</tr>
+<% end %>
+</table>
+
+
+<%= link_to 'Edit', edit_torneo_path(@torneo) %> |
+<%= link_to 'Back', torneos_path %>
